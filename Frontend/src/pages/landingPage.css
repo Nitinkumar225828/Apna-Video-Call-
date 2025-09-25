@@ -1,0 +1,244 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+
+}
+/* Animated Gradient Background */
+.landingPageContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-size: 400% 400%;
+  /* animation: gradientBG 15s ease infinite; */
+  overflow-x: hidden;
+}
+
+/* Gradient Animation Keyframes */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Main container */
+/* .landingPageContainer {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../assets/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 1s ease forwards;
+} */
+
+/* Navbar */
+.landingPageContainer nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.logo h2 {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo h2:hover {
+  color: #ff9839;
+}
+
+.userIcon ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.userIcon li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.userIcon li:hover {
+  color: #ff9839;
+  transform: translateY(-2px);
+}
+
+/* Main content */
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 0 50px;
+}
+
+.leftContainer {
+  width: 45%;
+  font-size: 1.2rem;
+  animation: slideInLeft 1s ease forwards;
+}
+
+.leftContainer h1 {
+  font-size: 2.5rem;
+}
+
+.leftContainer span {
+  color: #ff9839;
+}
+
+.leftContainer p {
+  margin-top: 20px;
+  line-height: 1.5;
+  animation: fadeIn 2s ease forwards;
+}
+
+.leftContainer button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #ff9839, #ffc107);
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.leftContainer button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ffc107, #ff9839);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Right container image */
+.rightContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInRight 1s ease forwards;
+}
+
+.rightContainer img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-right: 10px;
+  animation: float 3s ease-in-out infinite alternate;
+   border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-30px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-15px); }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .landingMainContainer {
+    flex-direction: column-reverse;
+    padding: 0 30px;
+    text-align: center;
+  }
+
+  .leftContainer, .rightContainer {
+    width: 100%;
+    margin: 0;
+    gap: 10px;
+  }
+
+  .rightContainer img {
+    margin: 20px 0;
+    max-width: 300px;
+    max-height: 450px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .leftContainer h1 {
+    font-size: 2rem;
+  }
+
+  .leftContainer p {
+    font-size: 1rem;
+  }
+
+  .leftContainer button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+  }
+
+  .landingPageContainer nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 30px;
+  }
+
+  .userIcon ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .leftContainer h1 {
+    font-size: 1.5rem;
+  }
+
+  .leftContainer p {
+    font-size: 0.9rem;
+  }
+
+  .leftContainer button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  .rightContainer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rightContainer img {
+    max-width: 250px;
+    max-height: 400px;
+  }
+
+  .landingPageContainer nav {
+    padding: 15px 20px;
+  }
+}

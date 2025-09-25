@@ -1,0 +1,131 @@
+/* ---------- Main Container ---------- */
+.meetVideoContainer {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    /* Smooth dark gradient */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    overflow: hidden;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    color: #fff;
+}
+
+/* ---------- Your own video (bottom left) ---------- */
+.meetUserVideo {
+    position: absolute;
+    bottom: 12vh;
+    left: 2vw;
+    height: 22vh;
+    width: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.4);
+}
+
+/* ---------- Control buttons bar ---------- */
+.buttonContainers {
+    position: absolute;
+    width: 100%;
+    bottom: 3vh;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.buttonContainers svg {
+    font-size: 2.8rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.buttonContainers svg:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+/* ---------- Remote participants view ---------- */
+.conferenceView { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    margin-top: 6vh;
+}
+
+.conferenceView video {
+    /* /* width: 38vw; */
+    min-width: 280px; 
+    height: 22vh;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+/* ---------- Chat panel (Glassmorphism) ---------- */
+.chatRoom {
+    position: absolute;
+    top: 4vh;
+    right: 2vw;
+    height: 92vh;
+    width: 28vw;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.chatContainer {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chattingDisplay {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 6px;
+    margin-bottom: 1rem;
+}
+
+.chattingArea {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Scrollbar styling for chat */
+.chattingDisplay::-webkit-scrollbar {
+    width: 6px;
+}
+.chattingDisplay::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+}
+
+/* ---------- Small screens adjustments ---------- */
+@media (max-width: 768px) {
+    .conferenceView video {
+        width: 90vw;
+        height: 25vh;
+    }
+    .chatRoom {
+        width: 90vw;
+        left: 5vw;
+        right: 5vw;
+        top: auto;
+        bottom: 0;
+        height: 50vh;
+    }
+}
