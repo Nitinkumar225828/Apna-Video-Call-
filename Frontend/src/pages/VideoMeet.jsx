@@ -11,11 +11,9 @@ import MicOffIcon from '@mui/icons-material/MicOff'
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import StopScreenShareIcon from '@mui/icons-material/StopScreenShare'
 import ChatIcon from '@mui/icons-material/Chat'
-// import server from '../enviroment';
-import dotenv from "dotenv";
-dotenv.config();
+// import server from '../environment';
 
-const server_url = process.env.REACT_APP_BACKEND_URL;
+const server_url = "https://apna-video-call-1-j6dx.onrender.com";
 
 var connections = {};
 

@@ -2,14 +2,11 @@ import axios from "axios";
 import httpStatus from "http-status";
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import server from "../enviroment";
-import dotenv from "dotenv";
-dotenv.config();
 
 export const AuthContext = createContext({});
 
 const client = axios.create({
-  baseURL: `${process.env.baseURL}/api/v1/users`
+  baseURL: "https://apna-video-call-1-j6dx.onrender.com/api/v1/users"
 });
 
 export const AuthProvider = ({ children }) => {
