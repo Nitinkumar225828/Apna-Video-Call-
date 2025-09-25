@@ -11,9 +11,11 @@ import MicOffIcon from '@mui/icons-material/MicOff'
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import StopScreenShareIcon from '@mui/icons-material/StopScreenShare'
 import ChatIcon from '@mui/icons-material/Chat'
-import server from '../enviroment';
+// import server from '../enviroment';
+import dotenv from "dotenv";
+dotenv.config();
 
-const server_url = server;
+const server_url = process.env.REACT_APP_BACKEND_URL;
 
 var connections = {};
 
